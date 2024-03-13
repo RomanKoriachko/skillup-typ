@@ -1,0 +1,134 @@
+@use 'reset';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #17161f;
+	color: #ffffff;
+	font-family: 'Exo 2', sans-serif;
+}
+.container {
+	max-width: 1230px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.row {
+	display: flex;
+}
+
+.main {
+	height: 100vh;
+	background: #1f1e28;
+	display: flex;
+	align-items: center;
+	min-height: 600px;
+	.wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		gap: 62px;
+		> img {
+			width: 100%;
+		}
+		.main-content {
+			.block-choice {
+				.new-block:first-child {
+					margin-bottom: 20px;
+				}
+				.new-block {
+					background-color: #33314285;
+					padding: 15px 20px;
+					border: none;
+					text-align: center;
+					border-radius: 10px;
+					font-weight: 500;
+					font-size: 17px;
+					line-height: 32px;
+					max-width: 400px;
+					.new-block-link {
+						display: block;
+						text-align: center;
+						margin-top: 20px;
+						.new-block-btn {
+							font-family: 'Exo 2', sans-serif;
+							font-weight: 700;
+							font-size: 16px;
+							background-color: #fa2702;
+							border: 1px solid transparent;
+							border-radius: 8px;
+							padding: 10px 25px;
+							min-width: 250px;
+							height: 50px;
+							cursor: pointer;
+							transition: 0.3s all;
+							color: white;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (hover: hover) {
+	.main {
+		.wrapper {
+			.main-content {
+				.block-choice {
+					.new-block {
+						.new-block-link {
+							.new-block-btn {
+								transition: border 0.3s;
+								&:hover {
+									border-color: white;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Tablet
+@media (max-width: 992px) {
+	.main {
+		.wrapper {
+			grid-template-columns: 1fr;
+			justify-items: center;
+			> img {
+				max-width: 500px;
+			}
+			.main-content {
+				.block-choice {
+					.new-block {
+						max-width: none;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Mobile
+@media (max-width: 576px) {
+	.main {
+		.wrapper {
+			.main-content {
+				.block-choice {
+					.new-block {
+						.new-block-link {
+							.new-block-btn {
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
